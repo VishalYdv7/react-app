@@ -18,8 +18,7 @@ const MovieBox = ({genre,selectedGenres,setSelectedGenres,}) => {
             justifyContent: "center",
             alignItems: "center",
             margin: "10px",
-            boarder: `2px solid ${
-                selectedGenres.includes(genre) ? "red" : "black"}`,
+            boarder: `2px solid ${selectedGenres.includes(genre) ? "red" : "blue"}`,
             }}
             onClick={handleSelection(genre)}
         >

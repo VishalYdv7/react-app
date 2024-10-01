@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -47,15 +48,15 @@ const Genres = [
 const Selection = () => {
 	const navigate=useNavigate();
 	const [selectedGenres, setSelectedGenres]=useState([]);
-	//Routing to info
+	// Storing Generes in Local Storage and Routing to dashboard
 	const moveNext = () => {
 		if (selectedGenres.length < 3) {
 			alert("Please select atleast 3 genres");
 			return;
 		}else{
-			localStorage.setItem("selectedMovies", JSON.stringify(selectedGenres));
+			localStorage.setItem("selectedGeneres", JSON.stringify(selectedGenres));
 			setSelectedGenres([]);
-			navigate("/info")
+			navigate("/dashboard")
 		}
 	};
 	return (
@@ -88,6 +89,7 @@ const Selection = () => {
 				{
 				color: 'red',
 				fontWeight: 'bold',
+				height:'20px'
 				}
 			}
 			>
